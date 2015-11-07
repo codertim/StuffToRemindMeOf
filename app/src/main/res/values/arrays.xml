@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="minutes_array">
+        <item>@string/min_choice1</item>
+        <item>@string/min_choice2</item>
+        <item>@string/min_choice3</item>
+        <item>@string/min_choice4</item>
+        <item>@string/min_choice5</item>
+        <item>@string/min_choice6</item>
+        <item>@string/min_choice7</item>
+        <item>@string/min_choice8</item>
+        <item>@string/min_choice9</item>	
+        <item>@string/min_choice10</item>
+    </string-array>
+</resources>

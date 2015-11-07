@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Stuff To Remind Me Of</string>
+    <string name="action_settings">Settings</string>
+	<string name="dialog_cancel">Cancel</string>
+	<string name="dialog_ok">OK</string>
+	<string name="edit_text_placeholder"></string>
+	<string name="hello_world">Hello world!</string>
+	<string name="min_choice1">1</string>
+	<string name="min_choice2">5</string>
+	<string name="min_choice3">10</string>
+	<string name="min_choice4">15</string>
+	<string name="min_choice5">30</string>
+	<string name="min_choice6">45</string>
+	<string name="min_choice7">60</string>
+	<string name="min_choice8">90</string>
+	<string name="min_choice9">120</string>
+	<string name="min_choice10">180</string>
+
+	<string name="new_button_label">New</string>
+	<string name="settings_title">My Settings</string>
+
+	<string name="vibrate_title">Vibrate</string>
+	<string name="vibrate_summary">Trigger vibrate when reminder is due</string>
+
+	<string name="minimize_title">Minimize</string>
+	<string name="minimize_summary">Minimize app when new reminder created</string>
+		
+</resources>

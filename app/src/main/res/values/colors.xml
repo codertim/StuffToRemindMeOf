@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="light_orange">#FF7400</color>
+    <color name="main_background">#FF4000</color>
+    <color name="text_view_font_color">#70E500</color>
+    <color name="button_new">#00B25C</color>
+    <color name="button_font">#00B25C</color>
+
+</resources>
