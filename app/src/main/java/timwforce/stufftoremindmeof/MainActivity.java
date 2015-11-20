@@ -135,9 +135,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		currentDialogView = dialogView;
 		alertDialogBuilder.setView(dialogView);
 		alertDialogBuilder.setTitle("Select minutes");
-		// alertDialogBuilder.setContentView(R.layout.dialog_time_input_view);
-		// alertDialogBuilder.setMessage("Enter time in minutes");   // cannot have array and message at same time
-		// alertDialogBuilder.setItems(R.array.minutes_array, null);
 		Log.d("onClick", "Calling setItems ...");
 
 		alertDialogBuilder.setSingleChoiceItems(R.array.minutes_array, 0, new DialogInterface.OnClickListener() {
@@ -243,7 +240,6 @@ public class MainActivity extends Activity implements OnClickListener {
             // Populate the wordsList with the String values the recognition engine thought it heard
             ArrayList<String> matches = data.getStringArrayListExtra(
                     RecognizerIntent.EXTRA_RESULTS);
-            // myWordList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item, matches));
             Log.d("onActivityResult", "ArrayList matches size = " + matches.size());
             Log.d("onActivityResult", "ArrayList matches = " + matches);
             if(matches.size() > 0) {
@@ -261,9 +257,6 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	public void onClick(View v) {
 		Log.d("MainActivity", "onClick v.getId() = " + v.getId());
-		
-		// sendNotification();
-		
 		askUserForNewReminder();
 	}
 	
