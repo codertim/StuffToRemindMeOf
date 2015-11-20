@@ -6,13 +6,18 @@ import android.graphics.Typeface;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Reminder {
 	private String message;
 	private int    minutes;
+	private Date   startDateTime;
 	
 	public Reminder(String message, int minutes) {
 		this.message = message;
 		this.minutes = minutes;
+		this.startDateTime = new Date();
 	}
 	
 	public String getMessage() {
@@ -25,9 +30,7 @@ public class Reminder {
 	public int getMinutes() {
 		return minutes;
 	}
-	public void setMinutes(int minutes) {
-		this.minutes = minutes;
-	}
+	public void setMinutes(int minutes) { this.minutes = minutes; }
 	
 	
 	// make reminder responsible for adding self to layout -- more OO oriented
@@ -35,7 +38,8 @@ public class Reminder {
 									LinearLayout.LayoutParams textLayoutParams) {
 		TextView tv = new TextView(context);
 		tv.setTypeface(null, Typeface.BOLD);
-		tv.setText(this.getMessage());
+		SimpleDateFormat fmt = new SimpleDateFormat("hh:mm");
+		tv.setText(this.getMessage() + " \n  - start time: " + fmt.format(startDateTime));
 		tv.setTextColor(context.getResources().getColor(R.color.text_view_font_color));
 		tv.setTextSize(16.0f);
 		ll.addView(tv, textLayoutParams);
