@@ -21,14 +21,14 @@ public class ReminderService extends Service {
 
 		@Override
 		public void onCreate() {
-			Log.d("ReminderService#onCreate", "Starting ...");
+			Log.d("RS#onCreate", "Starting ...");
 			
 		}
 		
 		@Override
 		public int onStartCommand(Intent intent, int flags, int startId) {
 			// new StartServiceAsyncTask().execute(extras.get(MainActivity.MESSAGE_KEY), getBaseContext());
-			Log.d("ReminderService#onStartCommand", "Starting ...");
+			Log.d("RS#onStartCommand", "Starting ...");
 			
 			AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
 			Intent alarmIntent = setupIntentForReceiver(intent);
@@ -50,9 +50,9 @@ public class ReminderService extends Service {
 			String ALARM_ACTION = ReminderReceiver.ACTION_DO_REMINDER;
 			Intent intentForReceiver = new Intent(ALARM_ACTION);
 			Bundle extras = intent.getExtras();
-			Log.d("ReminderService#setupIntentForReceiver", "extras bundle = " + extras);
+			Log.d("RS#setupIntentForRec...", "extras bundle = " + extras);
 			String msgFromBundle = (String) extras.getString(MainActivity.MESSAGE_KEY);
-			Log.d("ReminderService#setupIntentForReceiver", "********** msgFromBundle = " + msgFromBundle);
+			Log.d("RS#setupIntentForRec...", "********** msgFromBundle = " + msgFromBundle);
 			intentForReceiver.putExtra(MainActivity.MESSAGE_KEY, msgFromBundle);
 		
 			return(intentForReceiver);
@@ -77,11 +77,11 @@ public class ReminderService extends Service {
 			Context context = getApplicationContext();
 			SharedPreferences mySharedPreferences = context.getApplicationContext().getSharedPreferences(MainActivity.MY_PREFS, Activity.MODE_PRIVATE);
 			int whichTimeSelected = mySharedPreferences.getInt("whichTimeSelected", -1);
-			Log.d("ReminderService#getMinutesFromPreferences", "SharedPreferences - whichTimeSelected = " + whichTimeSelected);
+			Log.d("RS#getMinutesFromPref..", "SharedPreferences - whichTimeSelected = " + whichTimeSelected);
 			String [] minutesArray = context.getResources().getStringArray(R.array.minutes_array);
 			String minutesText = minutesArray[whichTimeSelected];
 			minutes = Integer.parseInt(minutesText);
-			Log.d("ReminderService#getMinutesFromPreferences", "minutes (int) = " + minutes);	
+			Log.d("RS#getMinutesFromPref..", "minutes (int) = " + minutes);
 						
 			return minutes;
 
