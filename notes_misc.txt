@@ -1,0 +1,6 @@
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore StuffToRemindMeOf.apk alias_android_strmo
+
+/opt/android-sdk-linux-ubuntu1310/tools/zipalign 4 StuffToRemindMeOf.apk StuffToRemindMeOfAligned.apk 
+
+
