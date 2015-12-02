@@ -3,6 +3,8 @@ package timwforce.stufftoremindmeof;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -39,7 +41,9 @@ public class Reminder {
 		TextView tv = new TextView(context);
 		tv.setTypeface(null, Typeface.BOLD);
 		SimpleDateFormat fmt = new SimpleDateFormat("hh:mm");
-		tv.setText(this.getMessage() + " \n  - start time: " + fmt.format(startDateTime));
+		final SpannableStringBuilder sbSpannable = new SpannableStringBuilder(this.getMessage() + "\n - start time: " + fmt.format(startDateTime));
+		sbSpannable.setSpan(new android.text.style.StyleSpan(Typeface.ITALIC), this.getMessage().length(), sbSpannable.length(), android.text.Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+		tv.setText(sbSpannable);
 		tv.setTextColor(context.getResources().getColor(R.color.text_view_font_color));
 		tv.setTextSize(16.0f);
 		ll.addView(tv, textLayoutParams);
